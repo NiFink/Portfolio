@@ -2,12 +2,15 @@ import React from "react";
 import PortfolioPage from "../PortfolioPage/LandingPage";
 import LandingCarousel from "./Components/LandingCarousel";
 import Contact from "./Components/Contact";
+import LandingText from "./Components/LandingText";
 
 function LandingPage() {
   return (
     <div className="px-16 py-16 ">
       <div className="grid grid-cols-1  grid-rows-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-        <div className="bg-green-800  col-span-2 rows-span-3 rounded-lg"></div>
+        <div className="bg-gradient-to-t from-indigo-700 to-purple-900 col-span-2 rows-span-3 rounded-lg">
+          <LandingText />
+        </div>
         <div className="row-span-2  h-full rounded-lg">
           <div className="grid grid-rows-8 h-full gap-7">
             <div className="row-span-5 bg-white rounded-lg ">

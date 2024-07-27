@@ -18,26 +18,26 @@ function LandingCarousel() {
   };
 
   return (
-    <div className="overflow-hidden relative h-full ">
+    <div className="overflow-hidden relative h-full rounded-lg ">
       <div
-        className="flex h-full transition ease-out duration-300 bg-black"
+        className="flex h-full transition ease-out duration-300 "
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((s, index) => (
-          <div key={index} className="flex-shrink-0 w-full h-full bg-black">
+          <div key={index} className="flex-shrink-0 w-full h-full ">
             <img
               src={s}
               alt={`Slide ${index}`}
-              className="w-full bg-black h-full object-cover rounded-lg"
+              className="w-full  h-full object-cover rounded-lg"
             />
           </div>
         ))}
       </div>
       <div className="absolute top-0 h-full w-full flex justify-between items-center">
-        <button onClick={previousSlide} className="h-full w-[20%]">
+        <button onClick={previousSlide} className="h-full w-[20%] bg-gradient-to-r to-transparent from-black/20">
           <i className="bi bi-caret-left-fill text-white text-3xl"></i>
         </button>
-        <button onClick={nextSlide} className="h-full w-[20%] to-black/30 ">
+        <button onClick={nextSlide} className="h-full w-[20%] bg-gradient-to-r from-transparent to-black/20 ">
           <i className="bi bi-caret-right-fill text-white text-3xl"></i>
         </button>
       </div>
