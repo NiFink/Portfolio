@@ -18,7 +18,7 @@ function App() {
 };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-slate-300 to-slate-200">
+    <div className="bg-gradient-to-br from-rose-50 via-slate-400 to-indigo-2000">
       {renderMenubar()}
       {currentSite === "LandingPage" && (
           <LandingPage/>

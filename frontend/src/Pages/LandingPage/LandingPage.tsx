@@ -1,39 +1,53 @@
 import React from "react";
-import PortfolioPage from "../PortfolioPage/LandingPage";
 import LandingCarousel from "./Components/LandingCarousel";
 import Contact from "./Components/Contact";
 import LandingText from "./Components/LandingText";
 
 function LandingPage() {
   return (
-    <div className="px-16 py-16 ">
-      <div className="grid grid-cols-1  grid-rows-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-        <div className="bg-gradient-to-t from-indigo-700 to-purple-900 col-span-2 rows-span-3 rounded-lg">
+    <div className="px-8 py-8 md:px-16 md:py-16 h-screen">
+      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 h-full">
+        {/* LandingText: spans 2 columns and 2 rows on larger screens */}
+        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-gradient-to-tl from-slate-50 via-orange-50 to-sky-100 rounded-lg p-6">
           <LandingText />
         </div>
-        <div className="row-span-2  h-full rounded-lg">
-          <div className="grid grid-rows-8 h-full gap-7">
-            <div className="row-span-5 bg-white rounded-lg ">
-              <img
-                src="./Pictures/city.jpg"
-                alt=""
-                className="h-full w-full object-cover rounded-lg"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="row-span-3 bg-white rounded-lg "></div>
-          </div>
+
+        {/* Image with blue ball: spans 1 column and 1 row */}
+        <div className="col-span-1 row-span-2 bg-white rounded-lg overflow-hidden">
+          <img
+            src="./Pictures/BLueball.jpg"
+            alt="Blue ball"
+            className="h-full w-full object-cover"
+          />
         </div>
 
-        <div className="bg-white row-span-2  h-full rounded-lg">
+        {/* Carousel: spans 1 column and 1 row */}
+        <div className="col-span-1 row-span-3 rounded-lg overflow-hidden">
           <LandingCarousel />
         </div>
-        <div className="bg-white   rounded-lg text-center">
-          {" "}
-          Profile Picture
+
+        {/* Profile Image: spans 1 column and 1 row */}
+        <div className="col-span-1 row-span-1  bg-white  flex justify-center rounded-lg ">
+          <img
+            src="./Pictures/Nils_Fink_Bewerbungsfoto-remove.png"
+            alt="Profile"
+            className="h-full rounded-lg "
+            style={{ backgroundImage: "url('/path/to/image.jpg')" , backgroundSize: "cover", backgroundPosition: "center" }}
+          />
         </div>
-        <div className="rounded-lg text-center">
+
+        {/* Contact: spans 1 column and 1 row */}
+        <div className="col-span-1 row-span-1 rounded-lg overflow-hidden">
           <Contact />
+        </div>
+
+        {/* Waves Image: spans 1 column and 1 row */}
+        <div className="col-span-1 row-span-1 bg-white rounded-lg overflow-hidden">
+          <img
+            src="./Pictures/waves.jpg"
+            alt="Waves"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </div>
