@@ -2,7 +2,7 @@ import React from 'react';
 
 function LandingText() {
   return (
-    <div className="h-full  text-white p-10 bg-gradient-to-tl from-orange-200 to-orange-600 bg-clip-text text-transparent">
+    <div className="h-full  p-10 bg-gradient-to-t from-rose-100 to-orange-300 bg-clip-text text-transparent overflow-hidden hover:overflow-scroll">
       <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 font-bold font-mono ">
         Welcome to My Programming Portfolio!
       </h1>

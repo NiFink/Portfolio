@@ -3,12 +3,19 @@ import LandingCarousel from "./Components/LandingCarousel";
 import Contact from "./Components/Contact";
 import LandingText from "./Components/LandingText";
 
-function LandingPage() {
+interface LandingPageProps {
+  ProjectPageClick: () => void;
+}
+
+
+
+function LandingPage({ProjectPageClick}: LandingPageProps) {
+
   return (
     <div className="px-8 py-8 md:px-16 md:py-16 h-screen">
       <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 h-full">
         {/* LandingText: spans 2 columns and 2 rows on larger screens */}
-        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-gradient-to-tl from-slate-50 via-orange-50 to-sky-100 rounded-lg p-6">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-gradient-to-tl from-indigo-800 to-purple-900 rounded-lg p-6">
           <LandingText />
         </div>
 
@@ -23,11 +30,11 @@ function LandingPage() {
 
         {/* Carousel: spans 1 column and 1 row */}
         <div className="col-span-1 row-span-3 rounded-lg overflow-hidden">
-          <LandingCarousel />
+          <LandingCarousel ProjectPageClick={ProjectPageClick}/>
         </div>
 
         {/* Profile Image: spans 1 column and 1 row */}
-        <div className="col-span-1 row-span-1  bg-white  flex justify-center rounded-lg ">
+        <div className="col-span-1 row-span-1  bg-gradient-to-l via-gray-500 flex justify-center rounded-lg ">
           <img
             src="./Pictures/Nils_Fink_Bewerbungsfoto-remove.png"
             alt="Profile"
