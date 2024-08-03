@@ -1,14 +1,17 @@
 import { useState } from "react";
+interface LandingPageProps {
+  ProjectPageClick: () => void;
+}
 
 function LandingCarousel() {
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
-    "./Pictures/20221222_174957.jpg",
-    "./Pictures/20221222_175011.jpg",
+    "./Pictures/Aboutme.gif",
+    "./Pictures/Projects.gif",
     "./Pictures/20221222_175011.jpg",
   ];
-
+ 
   const previousSlide = () => {
     setCurrent(current === 0 ? slides.length - 1 : current - 1);
   };
