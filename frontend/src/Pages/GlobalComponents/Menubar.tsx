@@ -16,27 +16,27 @@ function Menubar({
   };
 
   return (
-    <div className="z-10 w-full p-5 flex justify-center fixed bg-slate-900 ">
+    <div className="z-10 w-full flex justify-center fixed bg-slate-900 ">
       <div
-        className={`mr-10 ${getBackgroundClass(
+        className={`mr-1 ${getBackgroundClass(
           "LandingPage"
-        )} h-14 w-32 flex justify-center items-center rounded-lg cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-3xl hover:bg-indigo-400 hover:text-white`}
         onClick={landingPageClick}
       >
         Home
       </div>
       <div
-        className={`mr-10 ${getBackgroundClass(
+        className={`mr-1 ${getBackgroundClass(
           "AboutMePage"
-        )} h-14 w-32 flex justify-center items-center rounded-lg cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
         onClick={aboutmePageClick}
       >
         About Me
       </div>
       <div
-        className={`mr-10 ${getBackgroundClass(
+        className={`mr-1 ${getBackgroundClass(
           "ProjectsPage"
-        )} h-14 w-32 flex justify-center items-center rounded-lg cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
         onClick={projectsPageClick}
       >
         Projects
@@ -44,7 +44,7 @@ function Menubar({
       <div
         className={` ${getBackgroundClass(
           "Contact"
-        )} h-14 w-32 flex justify-center items-center rounded-lg cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
         onClick={landingPageClick}
       >
         Contact

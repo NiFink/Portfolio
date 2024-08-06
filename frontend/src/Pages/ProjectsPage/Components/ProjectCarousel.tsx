@@ -1,16 +1,26 @@
 import { useState } from "react";
 
-interface LandingPageProps {
-  ProjectsPageClick: () => void;
-}
+interface ProjectCarouselProps {}
 
-function LandingCarousel({ ProjectsPageClick }: LandingPageProps) {
+function ProjectCarousel({}: ProjectCarouselProps) {
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
-    { click: ProjectsPageClick, data: "./Pictures/Aboutme.gif" },
-    { click: ProjectsPageClick, data: "./Pictures/Projects.gif" },
-    { click: ProjectsPageClick, data: "./Pictures/20221222_175011.jpg" },
+    {
+      name: "Name",
+      image: "./Pictures/Aboutme.gif",
+      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+    },
+    {
+      name: "Name",
+      image: "./Pictures/Projects.gif",
+      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+    },
+    {
+      name: "Name",
+      image: "./Pictures/20221222_175011.jpg",
+      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+    },
   ];
 
   const previousSlide = () => {
@@ -22,40 +32,48 @@ function LandingCarousel({ ProjectsPageClick }: LandingPageProps) {
   };
 
   return (
-    <div className="overflow-hidden relative h-full rounded-lg">
+    <div className="overflow-hidden relative h-full rounded-lg py-32 ">
       <div
-        className="flex h-full transition ease-out duration-300"
+        className="flex  h-full transition-transform ease-out duration-300"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((s, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-full h-full cursor-pointer"
-            onClick={s.click}
+            className="flex-shrink-0  w-full h-full cursor-pointer flex"
           >
-            <img
-              src={s.data}
-              alt={`Slide ${index}`}
-              className="w-full h-full object-cover rounded-lg"
-            />
+            <div className="w-[10%] h-full"></div>
+            <div className="w-[20%] h-full object-cover rounded-lg">
+              <img
+                src={s.image}
+                alt={`Slide ${index}`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div className="w-[60%] h-full rounded-lg bg-indigo-900"> </div>
+
+            <div className="absolute top-0 h-full w-full flex justify-between items-center rounded-lg">
+              <div className="w-[10%] h-full"></div>
+
+              <button
+                onClick={previousSlide}
+                className="h-full w-[10%] bg-gradient-to-r to-transparent from-black/40 cursor-pointer justify-center rounded-lg"
+              >
+                <i className="bi bi-caret-left-fill text-white text-3xl"></i>
+              </button>
+              <div className="w-[60%] h-full"></div>
+              <button
+                onClick={nextSlide}
+                className="h-full w-[10%] bg-gradient-to-r from-transparent to-black/20 cursor-pointer rounded-lg"
+              >
+                <i className="bi bi-caret-right-fill text-white text-3xl"></i>
+              </button>
+              <div className="w-[10%] h-full"></div>
+            </div>
           </div>
         ))}
       </div>
-      <div className="absolute top-0 h-full w-full flex justify-between items-center">
-        <button
-          onClick={previousSlide}
-          className="h-full w-[20%] bg-gradient-to-r to-transparent from-black/20 cursor-pointer"
-        >
-          <i className="bi bi-caret-left-fill text-white text-3xl"></i>
-        </button>
-        <div className="w-[60%] h-full" onClick={slides[current].click}></div>
-        <button
-          onClick={nextSlide}
-          className="h-full w-[20%] bg-gradient-to-r from-transparent to-black/20 cursor-pointer"
-        >
-          <i className="bi bi-caret-right-fill text-white text-3xl"></i>
-        </button>
-      </div>
+
       <div className="absolute bottom-0 py-4 flex justify-center gap-5 w-full">
         {slides.map((_, i) => (
           <div
@@ -71,4 +89,4 @@ function LandingCarousel({ ProjectsPageClick }: LandingPageProps) {
   );
 }
 
-export default LandingCarousel;
+export default ProjectCarousel;
