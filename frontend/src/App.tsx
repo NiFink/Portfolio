@@ -4,14 +4,16 @@ import Menubar from "./Pages/GlobalComponents/Menubar";
 import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage";
 
 function App() {
-  const [currentSite, setSite] = useState("LandingPage");
+  const [currentPage, setPage] = useState("LandingPage");
 
   const renderMenubar = () => {
-    if (currentSite !== "LandingPage") {
+    if (currentPage !== "LandingPage") {
       return (
         <Menubar
-          landingPageClick={() => setSite("LandingPage")}
-          portfolioPageClick={() => setSite("PortfolioPage")}
+          landingPageClick={() => setPage("LandingPage")}
+          projectsPageClick={() => setPage("ProjectsPage")}
+          aboutmePageClick={() => setPage("AboutMePage")}
+          currentPage={currentPage}
         />
       );
     }
@@ -21,11 +23,11 @@ function App() {
   return (
     <div className="bg-gradient-to-br from-rose-50 via-slate-400 to-indigo-2000">
       {renderMenubar()}
-      {currentSite === "LandingPage" && (
-        <LandingPage ProjectsPageClick={() => setSite("ProjectPage")} />
+      {currentPage === "LandingPage" && (
+        <LandingPage ProjectsPageClick={() => setPage("ProjectsPage")} />
       )}
-      {currentSite === "ProjectsPage" && (
-        <ProjectsPage LandingPageClick={() => setSite("LandingPage")} />
+      {currentPage === "ProjectsPage" && (
+        <ProjectsPage LandingPageClick={() => setPage("LandingPage")} />
       )}
     </div>
   );

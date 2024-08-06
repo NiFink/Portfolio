@@ -4,12 +4,12 @@ import Contact from "./Components/Contact";
 import LandingText from "./Components/LandingText";
 
 interface LandingPageProps {
-  ProjectPageClick: () => void;
+  ProjectsPageClick: () => void;
 }
 
 
 
-function LandingPage({ProjectPageClick}: LandingPageProps) {
+function LandingPage({ProjectsPageClick}: LandingPageProps) {
 
   return (
     <div className="px-8 py-8 md:px-16 md:py-16 h-screen">
@@ -30,7 +30,7 @@ function LandingPage({ProjectPageClick}: LandingPageProps) {
 
         {/* Carousel: spans 1 column and 1 row */}
         <div className="col-span-1 row-span-3 rounded-lg overflow-hidden">
-          <LandingCarousel ProjectPageClick={ProjectPageClick}/>
+          <LandingCarousel ProjectsPageClick={ProjectsPageClick}/>
         </div>
 
         {/* Profile Image: spans 1 column and 1 row */}
