@@ -13,12 +13,12 @@ function ProjectCarousel({}: ProjectCarouselProps) {
     },
     {
       name: "Name",
-      image: "./Pictures/Projects.gif",
+      image: "./Pictures/AlittleAdventure.jpg",
       text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
     },
     {
       name: "Name",
-      image: "./Pictures/20221222_175011.jpg",
+      image: "./Pictures/Rayleigh.jpg",
       text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
     },
   ];
@@ -53,22 +53,22 @@ function ProjectCarousel({}: ProjectCarouselProps) {
             <div className="w-[60%] h-full rounded-lg bg-indigo-900"> </div>
 
             <div className="absolute top-0 h-full w-full flex justify-between items-center rounded-lg">
-              <div className="w-[10%] h-full"></div>
+
 
               <button
                 onClick={previousSlide}
-                className="h-full w-[10%] bg-gradient-to-r to-transparent from-black/40 cursor-pointer justify-center rounded-lg"
+                className="h-full w-[10%] cursor-pointer justify-center rounded-lg"
               >
                 <i className="bi bi-caret-left-fill text-white text-3xl"></i>
               </button>
               <div className="w-[60%] h-full"></div>
               <button
                 onClick={nextSlide}
-                className="h-full w-[10%] bg-gradient-to-r from-transparent to-black/20 cursor-pointer rounded-lg"
+                className="h-full w-[10%]  cursor-pointer rounded-lg"
               >
                 <i className="bi bi-caret-right-fill text-white text-3xl"></i>
               </button>
-              <div className="w-[10%] h-full"></div>
+
             </div>
           </div>
         ))}

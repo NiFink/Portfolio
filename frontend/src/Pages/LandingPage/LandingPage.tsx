@@ -13,9 +13,9 @@ function LandingPage({ProjectsPageClick}: LandingPageProps) {
 
   return (
     <div className="px-8 py-8 md:px-16 md:py-16 h-screen">
-      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 h-full">
+      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 h-full ">
         {/* LandingText: spans 2 columns and 2 rows on larger screens */}
-        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-gradient-to-tl from-indigo-800 to-purple-900 rounded-lg p-6">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2  p-6 bg-cover bg-center  rounded-lg" style={{ backgroundImage: "url('./Pictures/Main2.jpg')"}}>
           <LandingText />
         </div>
 
