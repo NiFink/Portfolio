@@ -10,7 +10,6 @@ function LandingCarousel({ ProjectsPageClick }: LandingPageProps) {
   const slides = [
     { click: ProjectsPageClick, data: "./Pictures/Aboutme.gif" },
     { click: ProjectsPageClick, data: "./Pictures/Projects.gif" },
-    { click: ProjectsPageClick, data: "./Pictures/20221222_175011.jpg" },
   ];
 
   const previousSlide = () => {
