@@ -12,15 +12,15 @@ function Menubar({
   currentPage,
 }: MenubarProps) {
   const getBackgroundClass = (page: string) => {
-    return currentPage === page ? "bg-indigo-200" : "bg-white"; // Highlight the active page with a different background color
+    return currentPage === page ? "from/white-20" : "bg-transparent"; // Highlight the active page with a different background color
   };
 
   return (
-    <div className="z-10 w-full flex justify-center fixed bg-slate-900 ">
+    <div className="z-10 w-full flex justify-center fixed bg-transparent text-white text-2xl">
       <div
         className={`mr-1 ${getBackgroundClass(
           "LandingPage"
-        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-3xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold  `}
         onClick={landingPageClick}
       >
         Home
@@ -28,7 +28,7 @@ function Menubar({
       <div
         className={`mr-1 ${getBackgroundClass(
           "AboutMePage"
-        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold `}
         onClick={aboutmePageClick}
       >
         About Me
@@ -36,7 +36,7 @@ function Menubar({
       <div
         className={`mr-1 ${getBackgroundClass(
           "ProjectsPage"
-        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold `}
         onClick={projectsPageClick}
       >
         Projects
@@ -44,7 +44,7 @@ function Menubar({
       <div
         className={` ${getBackgroundClass(
           "Contact"
-        )} h-20 w-40 flex justify-center items-center cursor-pointer font-bold text-indigo-950 text-2xl hover:bg-indigo-400 hover:text-white`}
+        )} h-20 w-40 flex justify-center items-center cursor-pointer font-bold `}
         onClick={landingPageClick}
       >
         Contact

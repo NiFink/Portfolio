@@ -2,6 +2,7 @@ import { useState } from "react";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import Menubar from "./Pages/GlobalComponents/Menubar";
 import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage";
+import AboutMePage from "./Pages/AboutMePage/AboutMePage";
 
 function App() {
   const [currentPage, setPage] = useState("LandingPage");
@@ -28,6 +29,9 @@ function App() {
       )}
       {currentPage === "ProjectsPage" && (
         <ProjectsPage LandingPageClick={() => setPage("LandingPage")} />
+      )}
+      {currentPage === "AboutMePage" && (
+        <AboutMePage LandingPageClick={() => setPage("LandingPage")} />
       )}
     </div>
   );

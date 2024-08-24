@@ -7,19 +7,54 @@ function ProjectCarousel({}: ProjectCarouselProps) {
 
   const slides = [
     {
-      name: "Name",
+      name: "Portfolio",
       image: "./Pictures/Aboutme.gif",
-      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+      languages: "Typescript, Tailwind",
+      framework: "React",
+      tools: "Docker, Nginx",
+      text: "Here, you can discover everything about Nils and his endeavors",
+      bg_color: "bg-gradient-to-tl from-slate-900 via-slate-800 to-slate-900",
+      text_color: "text-white",
     },
     {
-      name: "Name",
+      name: "StudyTrade",
+      image: "./Pictures/building10.jpg",
+      languages: "Typescript, Java, Tailwind, NoSQL",
+      framework: "React, SpringBoot, MongoDB",
+      tools: "Docker, AWS, Swagger, GitLab/CI-CD, Bootstrap",
+      text: "A courageous knight valiantly defends his village against perilous creatures of darkness.",
+      bg_color: "bg-gradient-to-br from-slate-50  to-slate-300",
+      name_color: "text-rose-600",
+    },
+    {
+      name: "Speisenoase",
+      image: "./Pictures/SpeisenOase-Logo.jpg",
+      languages: "Java, Xml",
+      framework: "JavaFx",
+      tools: "Scenebuilder",
+      text: "A small online marketplace for groceries and various other essentials.",
+      bg_color: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+      text_color: "text-white",
+    },
+    {
+      name: "A little Adventure",
       image: "./Pictures/AlittleAdventure.jpg",
-      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+      languages: "C#",
+      framework: "Windows Forms",
+      tools: "-",
+      text: "A courageous knight valiantly defends his village against perilous creatures of darkness.",
+      bg_color: "bg-gradient-to-br from-cyan-50 to-indigo-200",
+      text_color: "",
     },
     {
-      name: "Name",
+      name: "Rayleigh",
       image: "./Pictures/Rayleigh.jpg",
-      text: "Katzen lieben es, in der Sonne zu liegen. Hunde spielen gerne im Park. Die Vögel singen morgens früh. Im Wald wachsen hohe Bäume. Blumen blühen im Frühling. Kinder lachen und spielen. Bücher erzählen spannende Geschichten. Musik macht glücklich. Fahrräder sind umweltfreundlich. Regen erfrischt die Natur. Sterne leuchten nachts hell. Autos fahren schnell. Bienen sammeln Nektar. Der Mond scheint ruhig. Freunde treffen sich gerne. Berge bieten schöne Ausblicke. Züge reisen weit. Schokolade schmeckt lecker. Fische schwimmen im Teich. Winter bringt Schnee. Sommer bringt Wärme. Herbst bringt bunte Blätter. Frühling bringt neues Leben. Träume inspirieren. Kunst schafft Schönheit.",
+      languages: "C#",
+      framework: "Windows Forms",
+      tools: "-",
+      text: "Your trusted voice assistant, ready to help and simplify your daily tasks with just a word.",
+      bg_color: "bg-gradient-to-b from-slate-900 via-teal-900 to-slate-900",
+      text_color: "text-white",
     },
   ];
 
@@ -50,11 +85,35 @@ function ProjectCarousel({}: ProjectCarouselProps) {
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
-            <div className="w-[60%] h-full rounded-lg bg-indigo-900"> </div>
+            <div
+              className={`w-[60%] h-full rounded-lg bg-indigo-900 ${s.bg_color} overflow-scroll`}
+            >
+              <div
+                className={`text-7xl ${s.text_color} ${s.name_color} font-bold p-5`}
+              >
+                {`${s.name}`}
+              </div>
+              <div className={`text-2xl ${s.text_color} px-10 py-2`}>
+                <div className={` px-10 py-2 flex `}>
+                  <div className="w-[20%] text-3xl font-semibold">{`Languages: `}</div>
+                  <div className="w-full text-center ">{`${s.languages}`}</div>
+                </div>
+                <div className={`  px-10 py-2 flex `}>
+                  <div className="w-[20%] text-3xl font-semibold">{`Framework: `}</div>
+                  <div className="w-full text-center">{`${s.framework}`}</div>
+                </div>
+                <div className={` px-10 py-2 flex `}>
+                  <div className="w-[20%] text-3xl font-semibold">{`Tools: `}</div>
+                  <div className="w-full text-center">{`${s.tools}`}</div>
+                </div>
+                <div className={` px-10 py-8 flex `}>
+                  <div className="w-[20%] text-3xl font-semibold">{`Details: `}</div>
+                  <div className="w-full p-1">{`${s.text}`}</div>
+                </div>
+              </div>
+            </div>
 
             <div className="absolute top-0 h-full w-full flex justify-between items-center rounded-lg">
-
-
               <button
                 onClick={previousSlide}
                 className="h-full w-[10%] cursor-pointer justify-center rounded-lg"
@@ -68,7 +127,6 @@ function ProjectCarousel({}: ProjectCarouselProps) {
               >
                 <i className="bi bi-caret-right-fill text-white text-3xl"></i>
               </button>
-
             </div>
           </div>
         ))}
