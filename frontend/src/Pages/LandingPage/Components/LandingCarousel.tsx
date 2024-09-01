@@ -2,13 +2,14 @@ import { useState } from "react";
 
 interface LandingPageProps {
   ProjectsPageClick: () => void;
+  AboutMePageClick: () => void;
 }
 
-function LandingCarousel({ ProjectsPageClick }: LandingPageProps) {
+function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProps) {
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
-    { click: ProjectsPageClick, data: "./Pictures/Aboutme.gif" },
+    { click: AboutMePageClick, data: "./Pictures/Aboutme.gif" },
     { click: ProjectsPageClick, data: "./Pictures/Projects.gif" },
   ];
 
