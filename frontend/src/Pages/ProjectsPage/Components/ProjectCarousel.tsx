@@ -15,6 +15,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       text: "Here, you can discover everything about Nils and his endeavors",
       bg_color: "bg-gradient-to-tl from-slate-900 via-slate-800 to-slate-900",
       text_color: "text-white",
+      git: "https://github.com/NiFink/Portfolio/tree/main/frontend",
     },
     {
       name: "StudyTrade",
@@ -22,9 +23,10 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       languages: "Typescript, Java, Tailwind, NoSQL",
       framework: "React, SpringBoot, MongoDB",
       tools: "Docker, AWS, Swagger, GitLab/CI-CD, Bootstrap",
-      text: "A courageous knight valiantly defends his village against perilous creatures of darkness.",
+      text: "An online trading market for students provides a platform where they can exchange products and services with each other. ",
       bg_color: "bg-gradient-to-br from-slate-50  to-slate-300",
       name_color: "text-rose-600",
+      git: "https://gitlab.mi.hdm-stuttgart.de/nk150/studytrade-se3",
     },
     {
       name: "Speisenoase",
@@ -35,6 +37,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       text: "A small online marketplace for groceries and various other essentials.",
       bg_color: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
       text_color: "text-white",
+      git: "https://github.com/NiFink/Speisenoase",
     },
     {
       name: "A little Adventure",
@@ -45,6 +48,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       text: "A courageous knight valiantly defends his village against perilous creatures of darkness.",
       bg_color: "bg-gradient-to-br from-cyan-50 to-indigo-200",
       text_color: "",
+      git: "https://github.com/NiFink/Rayleigh",
     },
     {
       name: "Rayleigh",
@@ -55,6 +59,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       text: "Your trusted voice assistant, ready to help and simplify your daily tasks with just a word.",
       bg_color: "bg-gradient-to-b from-slate-900 via-teal-900 to-slate-900",
       text_color: "text-white",
+      git: "https://github.com/NiFink/A-little-Adventure",
     },
   ];
 
@@ -110,6 +115,11 @@ function ProjectCarousel({}: ProjectCarouselProps) {
                   <div className="w-[20%] text-3xl font-semibold">{`Details: `}</div>
                   <div className="w-full p-1">{`${s.text}`}</div>
                 </div>
+                <div className={` px-10 py-8 flex `}>
+                  <a href={`${s.git}`} className={` z-20 w-full justify-center text-center bg-white rounded-xl text-indigo-900 font-semibold hover:bg-slate-200`}>
+                    Zum Git
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -120,7 +130,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
               >
                 <i className="bi bi-caret-left-fill text-white text-3xl"></i>
               </button>
-              <div className="w-[60%] h-full"></div>
+              <div className="w-[60%] h-full cursor-default"></div>
               <button
                 onClick={nextSlide}
                 className="h-full w-[10%]  cursor-pointer rounded-lg"
