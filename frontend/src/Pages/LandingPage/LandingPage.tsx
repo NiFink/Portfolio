@@ -23,7 +23,7 @@ function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
         {/* Image with blue ball: spans 1 column and 1 row */}
         <div className="col-span-1 row-span-2 bg-white rounded-lg overflow-hidden">
           <img
-            src="./Pictures/BLueball.jpg"
+            src="./Pictures/WhiteBall.jpg"
             alt="Blue ball"
             className="h-full w-full object-cover"
           />
@@ -40,7 +40,7 @@ function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
             src="./Pictures/Nils_Fink_Bewerbungsfoto-remove.png"
             alt="Profile"
             className="h-full rounded-lg "
-            style={{ backgroundImage: "url('/path/to/image.jpg')" , backgroundSize: "cover", backgroundPosition: "center" }}
+            style={{ backgroundSize: "cover", backgroundPosition: "center" }}
           />
         </div>
 
@@ -52,7 +52,7 @@ function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
         {/* Waves Image: spans 1 column and 1 row */}
         <div className="col-span-1 row-span-1 bg-white rounded-lg overflow-hidden">
           <img
-            src="./Pictures/waves.jpg"
+            src="./Pictures/Waves.jpg"
             alt="Waves"
             className="h-full w-full object-cover"
           />

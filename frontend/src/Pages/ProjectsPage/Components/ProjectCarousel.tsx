@@ -25,7 +25,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       tools: "Docker, AWS, Swagger, GitLab/CI-CD, Bootstrap",
       text: "An online trading market for students provides a platform where they can exchange products and services with each other. ",
       bg_color: "bg-gradient-to-br from-slate-50  to-slate-300",
-      name_color: "text-rose-600",
+      name_color: "text-white",
       git: "https://gitlab.mi.hdm-stuttgart.de/nk150/studytrade-se3",
     },
     {
@@ -117,7 +117,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
                 </div>
                 <div className={` px-10 py-8 flex `}>
                   <a href={`${s.git}`} className={` z-20 w-full justify-center text-center bg-white rounded-xl text-indigo-900 font-semibold hover:bg-slate-200`}>
-                    Zum Git
+                    To Git
                   </a>
                 </div>
               </div>
