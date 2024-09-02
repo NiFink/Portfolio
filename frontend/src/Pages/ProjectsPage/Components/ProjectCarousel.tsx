@@ -25,7 +25,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       tools: "Docker, AWS, Swagger, GitLab/CI-CD, Bootstrap",
       text: "An online trading market for students provides a platform where they can exchange products and services with each other. ",
       bg_color: "bg-gradient-to-br from-slate-50  to-slate-300",
-      name_color: "text-white",
+      name_color: "text-Black",
       git: "https://gitlab.mi.hdm-stuttgart.de/nk150/studytrade-se3",
     },
     {
