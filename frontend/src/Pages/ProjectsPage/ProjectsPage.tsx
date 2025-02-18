@@ -7,7 +7,7 @@ interface ProjectsPageProps {
 
 function ProjectsPage({LandingPageClick}: ProjectsPageProps) {
   return (
-    <div className='h-screen pt-20 bg-gradient-to-tl from-neutral-900 via-indigo-900 to-slate-900'>
+    <div className='h-screen pt-20 bg-gradient-to-tr from-orange-100 via-purple-200 to-slate-100'>
       <ProjectCarousel></ProjectCarousel>
     </div>
   );

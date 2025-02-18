@@ -35,7 +35,7 @@ function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
         </div>
 
         {/* Profile Image: spans 1 column and 1 row */}
-        <div className="col-span-1 row-span-1  bg-gradient-to-l via-gray-500 flex justify-center rounded-lg ">
+        <div className="col-span-1 row-span-1 bg-gradient-to-l via-amber-50 to-blue-200 flex justify-center rounded-lg ">
           <img
             src="./Pictures/Nils_Fink_Bewerbungsfoto-remove.png"
             alt="Profile"

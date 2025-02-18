@@ -7,14 +7,27 @@ function ProjectCarousel({}: ProjectCarouselProps) {
 
   const slides = [
     {
+      name: "RewardRun",
+      image: "./Pictures/RewardRun_Main.jpg",
+      languages: "Typescript, Java, NoSql",
+      framework: "Next.js, Tailwind, SpringBoot, MongoDB",
+      tools: "Docker, Swagger, GitLab",
+      text: "RewardRun is a web application that allows event attendees to scan QR codes to unlock rewards and track their progress. Organisers can create their own events, generate QR codes and view statistics about the scanned codes. The project offers an interactive way to organise events and motivate visitors to explore the site.",
+      bg_color: "bg-gradient-to-tr from-blue-900 via-fuchsia-800 to-amber-400",
+      bg_picture: "./Pictures/RewardRun.png",
+      text_color: "white",
+      git: "https://github.com/NiFink/A-little-Adventure",
+      website: "https://rewardrun.mi.hdm-stuttgart.de/de/home",
+    },
+    {
       name: "Portfolio",
       image: "./Pictures/Aboutme.gif",
       languages: "Typescript, Tailwind",
       framework: "React",
-      tools: "Docker, Nginx",
+      tools: "Docker, Nginx", 
       text: "Here, you can discover everything about Nils and his endeavors",
       bg_color: "bg-gradient-to-tl from-slate-900 via-slate-800 to-slate-900",
-      text_color: "text-white",
+      text_color: "white",
       git: "https://github.com/NiFink/Portfolio/tree/main/frontend",
     },
     {
@@ -22,10 +35,10 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       image: "./Pictures/building10.jpg",
       languages: "Typescript, Java, Tailwind, NoSQL",
       framework: "React, SpringBoot, MongoDB",
-      tools: "Docker, AWS, Swagger, GitLab/CI-CD, Bootstrap",
+      tools: "Docker, AWS, Swagger, GitLab, Bootstrap",
       text: "An online trading market for students provides a platform where they can exchange products and services with each other. ",
       bg_color: "bg-gradient-to-br from-slate-50  to-slate-300",
-      name_color: "text-Black",
+      text_color: "black",
       git: "https://gitlab.mi.hdm-stuttgart.de/nk150/studytrade-se3",
     },
     {
@@ -36,29 +49,29 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       tools: "Scenebuilder",
       text: "A small online marketplace for groceries and various other essentials.",
       bg_color: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
-      text_color: "text-white",
+      text_color: "white",
       git: "https://github.com/NiFink/Speisenoase",
     },
     {
       name: "A little Adventure",
       image: "./Pictures/AlittleAdventure.jpg",
-      languages: "C#",
+      languages: "Csharp",
       framework: "Windows Forms",
       tools: "-",
       text: "A courageous knight valiantly defends his village against perilous creatures of darkness.",
       bg_color: "bg-gradient-to-br from-cyan-50 to-indigo-200",
-      text_color: "",
+      text_color: "black",
       git: "https://github.com/NiFink/Rayleigh",
     },
     {
       name: "Rayleigh",
       image: "./Pictures/Rayleigh.jpg",
-      languages: "C#",
+      languages: "Csharp",
       framework: "Windows Forms",
       tools: "-",
       text: "Your trusted voice assistant, ready to help and simplify your daily tasks with just a word.",
       bg_color: "bg-gradient-to-b from-slate-900 via-teal-900 to-slate-900",
-      text_color: "text-white",
+      text_color: "white",
       git: "https://github.com/NiFink/A-little-Adventure",
     },
   ];
@@ -72,7 +85,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
   };
 
   return (
-    <div className="overflow-hidden relative h-full rounded-lg py-32 ">
+    <div className="overflow-hidden relative h-full rounded-xl py-32 ">
       <div
         className="flex  h-full transition-transform ease-out duration-300"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -80,62 +93,131 @@ function ProjectCarousel({}: ProjectCarouselProps) {
         {slides.map((s, index) => (
           <div
             key={index}
-            className="flex-shrink-0  w-full h-full cursor-pointer flex"
+            className="flex-shrink-0  w-full h-full flex "
           >
             <div className="w-[10%] h-full"></div>
-            <div className="w-[20%] h-full object-cover rounded-lg">
+            <div className="w-[20%] h-full object-cover rounded-2xl shadow-2xl">
               <img
                 src={s.image}
                 alt={`Slide ${index}`}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-xl "
               />
             </div>
             <div
-              className={`w-[60%] h-full rounded-lg bg-indigo-900 ${s.bg_color} overflow-scroll`}
+              className={`w-[60%] mx-2 p-8 h-full rounded-xl bg-indigo-900 ${s.bg_color} overflow-hidden shadow-2xl relative z-40`}
             >
-              <div
-                className={`text-7xl ${s.text_color} ${s.name_color} font-bold p-5`}
-              >
-                {`${s.name}`}
+              <div className={`text-7xl text-${s.text_color} font-bold p-5`}>
+                {s.name}
               </div>
-              <div className={`text-2xl ${s.text_color} px-10 py-2`}>
-                <div className={` px-10 py-2 flex `}>
-                  <div className="w-[20%] text-3xl font-semibold">{`Languages: `}</div>
-                  <div className="w-full text-center ">{`${s.languages}`}</div>
+
+              {/* Scrollbarer Inhalt */}
+              <div
+                className={`px-12 flex flex-col overflow-y-auto max-h-[calc(100%-80px)] text-${s.text_color} text-xl`}
+              >
+                {/* Details-Text oben */}
+                <div className="text-center text-2xl font-medium p-16">
+                  {s.text}
                 </div>
-                <div className={`  px-10 py-2 flex `}>
-                  <div className="w-[20%] text-3xl font-semibold">{`Framework: `}</div>
-                  <div className="w-full text-center">{`${s.framework}`}</div>
+
+                {/* Grid für die drei Blöcke */}
+                <div className="grid grid-cols-3 gap-4 ">
+                  {/* Languages Block */}
+                  <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
+                    <div className="text-4xl font-semibold text-center py-8 ">
+                      Languages
+                    </div>
+                    <hr className="border-slate-800 w-[80%]"/>
+                    <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
+                      {s.languages.split(", ").map((lang, index) => (
+                        <img
+                          key={index}
+                          src={`./icons/${lang.toLowerCase()}.png`}
+                          alt={lang}
+                          className="h-12 w-12"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Frameworks Block */}
+                  <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
+                    <div className="text-4xl font-semibold text-center py-8 ">
+                      Frameworks
+                    </div>
+                    <hr className="border-slate-800 w-[80%]"/>
+                    <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
+                      {s.framework.split(", ").map((fw, index) => (
+                        <img
+                          key={index}
+                          src={`./icons/${fw.toLowerCase()}.png`}
+                          alt={fw}
+                          className="h-12 w-12"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tools Block */}
+                  <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
+                    <div className="text-4xl font-semibold text-center py-8 ">
+                      Tools
+                    </div>
+                    <hr className="border-slate-800 w-[80%]"/>
+                    <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
+                      {s.tools.split(", ").map((tool, index) => (
+                        <img
+                          key={index}
+                          src={`./icons/${tool.toLowerCase()}.png`}
+                          alt={tool}
+                          className="h-12 w-12"
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className={` px-10 py-2 flex `}>
-                  <div className="w-[20%] text-3xl font-semibold">{`Tools: `}</div>
-                  <div className="w-full text-center">{`${s.tools}`}</div>
-                </div>
-                <div className={` px-10 py-8 flex `}>
-                  <div className="w-[20%] text-3xl font-semibold">{`Details: `}</div>
-                  <div className="w-full p-1">{`${s.text}`}</div>
-                </div>
-                <div className={` px-10 py-8 flex `}>
-                  <a href={`${s.git}`} className={` z-20 w-full justify-center text-center bg-white rounded-xl text-indigo-900 font-semibold hover:bg-slate-200`}>
-                    To Git
+              </div>
+
+              {/* Fixierter Button am unteren Rand */}
+              <div className="absolute bottom-0 left-0 w-full p-10  z-50">
+                <div
+                  className={`flex ${
+                    s.website ? "justify-between space-x-4" : "justify-center"
+                  }`}
+                >
+                  {/* Website-Button (falls vorhanden) */}
+                  {s.website && (
+                    <a
+                      href={s.website}
+                      className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl py-2"
+                    >
+                      Visit this Website
+                    </a>
+                  )}
+
+                  {/* Git-Button */}
+                  <a
+                    href={s.git}
+                    className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl py-2"
+                  >
+                    Go to the Git repository
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-0 h-full w-full flex justify-between items-center rounded-lg">
+            <div className="absolute top-0 h-full w-full flex justify-between items-center rounded-xl">
               <button
                 onClick={previousSlide}
-                className="h-full w-[10%] cursor-pointer justify-center rounded-lg"
+                className="h-full w-[10%] cursor-pointer justify-center rounded-lg "
               >
-                <i className="bi bi-caret-left-fill text-white text-3xl"></i>
+                <i className="bi bi-caret-left-fill text-slate-800 text-6xl"></i>
               </button>
               <div className="w-[60%] h-full cursor-default"></div>
               <button
                 onClick={nextSlide}
                 className="h-full w-[10%]  cursor-pointer rounded-lg"
               >
-                <i className="bi bi-caret-right-fill text-white text-3xl"></i>
+                <i className="bi bi-caret-right-fill text-slate-800 text-6xl"></i>
               </button>
             </div>
           </div>
