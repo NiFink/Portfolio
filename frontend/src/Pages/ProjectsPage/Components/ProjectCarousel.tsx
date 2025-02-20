@@ -12,7 +12,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       languages: "Typescript, Java, NoSql",
       framework: "Next.js, Tailwind, SpringBoot, MongoDB",
       tools: "Docker, Swagger, GitLab",
-      text: "RewardRun is a web application that allows event attendees to scan QR codes to unlock rewards and track their progress. Organisers can create their own events, generate QR codes and view statistics about the scanned codes. The project offers an interactive way to organise events and motivate visitors to explore the site.",
+      text: "RewardRun is a web application that allows event attendees to scan QR codes to unlock rewards and track their progress. The project offers an interactive way to organise events and motivate visitors to explore the site.",
       bg_color: "bg-gradient-to-tr from-blue-900 via-fuchsia-800 to-amber-400",
       bg_picture: "./Pictures/RewardRun.png",
       text_color: "white",
@@ -24,7 +24,7 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       image: "./Pictures/Aboutme.gif",
       languages: "Typescript, Tailwind",
       framework: "React",
-      tools: "Docker, Nginx", 
+      tools: "Docker, Nginx",
       text: "Here, you can discover everything about Nils and his endeavors",
       bg_color: "bg-gradient-to-tl from-slate-900 via-slate-800 to-slate-900",
       text_color: "white",
@@ -85,16 +85,13 @@ function ProjectCarousel({}: ProjectCarouselProps) {
   };
 
   return (
-    <div className="overflow-hidden relative h-full rounded-xl py-32 ">
+    <div className="overflow-hidden relative h-full rounded-xl 2xl:py-28 py-20 ">
       <div
         className="flex  h-full transition-transform ease-out duration-300"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((s, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0  w-full h-full flex "
-          >
+          <div key={index} className="flex-shrink-0  w-full h-full flex ">
             <div className="w-[10%] h-full"></div>
             <div className="w-[20%] h-full object-cover rounded-2xl shadow-2xl">
               <img
@@ -103,30 +100,31 @@ function ProjectCarousel({}: ProjectCarouselProps) {
                 className="w-full h-full object-cover rounded-xl "
               />
             </div>
-            <div
-              className={`w-[60%] mx-2 p-8 h-full rounded-xl bg-indigo-900 ${s.bg_color} overflow-hidden shadow-2xl relative z-40`}
-            >
-              <div className={`text-7xl text-${s.text_color} font-bold p-5`}>
+            <div className={`grid grid-rows-[20%_70%_10%] w-[60%] mx-2  h-full rounded-xl ${s.bg_color} overflow-hidden shadow-2xl z-40`}>
+              {/* Name Section */}
+              <div
+                className={`text-7xl text-${s.text_color} font-bold pt-8 flex items-center justify-center`}
+              >
                 {s.name}
               </div>
 
               {/* Scrollbarer Inhalt */}
               <div
-                className={`px-12 flex flex-col overflow-y-auto max-h-[calc(100%-80px)] text-${s.text_color} text-xl`}
+                className={`px-12 flex flex-col overflow-y-auto text-${s.text_color} text-xl`}
               >
                 {/* Details-Text oben */}
-                <div className="text-center text-2xl font-medium p-16">
+                <div className="text-center text-2xl font-medium px-16 py-8">
                   {s.text}
                 </div>
 
                 {/* Grid für die drei Blöcke */}
-                <div className="grid grid-cols-3 gap-4 ">
+                <div className="grid grid-cols-3 gap-4">
                   {/* Languages Block */}
                   <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
-                    <div className="text-4xl font-semibold text-center py-8 ">
+                    <div className="text-4xl font-semibold text-center py-8">
                       Languages
                     </div>
-                    <hr className="border-slate-800 w-[80%]"/>
+                    <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
                       {s.languages.split(", ").map((lang, index) => (
                         <img
@@ -141,10 +139,10 @@ function ProjectCarousel({}: ProjectCarouselProps) {
 
                   {/* Frameworks Block */}
                   <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
-                    <div className="text-4xl font-semibold text-center py-8 ">
+                    <div className="text-4xl font-semibold text-center py-8">
                       Frameworks
                     </div>
-                    <hr className="border-slate-800 w-[80%]"/>
+                    <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
                       {s.framework.split(", ").map((fw, index) => (
                         <img
@@ -159,10 +157,10 @@ function ProjectCarousel({}: ProjectCarouselProps) {
 
                   {/* Tools Block */}
                   <div className="flex flex-col items-center bg-white text-slate-800 rounded-xl">
-                    <div className="text-4xl font-semibold text-center py-8 ">
+                    <div className="text-4xl font-semibold text-center py-8">
                       Tools
                     </div>
-                    <hr className="border-slate-800 w-[80%]"/>
+                    <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-10">
                       {s.tools.split(", ").map((tool, index) => (
                         <img
@@ -177,31 +175,22 @@ function ProjectCarousel({}: ProjectCarouselProps) {
                 </div>
               </div>
 
-              {/* Fixierter Button am unteren Rand */}
-              <div className="absolute bottom-0 left-0 w-full p-10  z-50">
-                <div
-                  className={`flex ${
-                    s.website ? "justify-between space-x-4" : "justify-center"
-                  }`}
-                >
-                  {/* Website-Button (falls vorhanden) */}
-                  {s.website && (
-                    <a
-                      href={s.website}
-                      className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl py-2"
-                    >
-                      Visit this Website
-                    </a>
-                  )}
-
-                  {/* Git-Button */}
+              {/* Button Section */}
+              <div className="flex  px-12 py-2 justify-center space-x-4">
+                {s.website && (
                   <a
-                    href={s.git}
-                    className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl py-2"
+                    href={s.website}
+                    className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl flex justify-center items-center"
                   >
-                    Go to the Git repository
+                    Visit this Website
                   </a>
-                </div>
+                )}
+                <a
+                  href={s.git}
+                  className="w-full text-center text-2xl bg-white shadow-2xl font-semibold rounded-xl flex justify-center items-center"
+                >
+                  Go to the Git repository
+                </a>
               </div>
             </div>
 

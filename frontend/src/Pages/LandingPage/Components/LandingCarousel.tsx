@@ -9,8 +9,9 @@ function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProp
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
-    { click: AboutMePageClick, data: "./Pictures/Aboutme.gif" },
     { click: ProjectsPageClick, data: "./Pictures/Projects.gif" },
+    { click: AboutMePageClick, data: "./Pictures/Aboutme.gif" },
+
   ];
 
   const previousSlide = () => {
