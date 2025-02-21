@@ -21,9 +21,10 @@ function Menubar({
         <div
           className={`mr-1 ${getBackgroundClass(
             "LandingPage"
-          )} h-20 w-40 flex justify-center items-center  cursor-pointer font-bold  hover:underline decoration-2`}
+          )} h-20 w-40 flex justify-center items-center cursor-pointer font-bold hover:underline decoration-2 gap-2`}
           onClick={landingPageClick}
         >
+          <i className="bi bi-house-door-fill text-xl"></i>
           Home
         </div>
         <div
