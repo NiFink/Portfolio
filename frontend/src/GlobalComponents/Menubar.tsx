@@ -16,7 +16,7 @@ function Menubar({
   };
 
   return (
-    <div className="z-10 w-full flex justify-center fixed 0 text-2xl ">
+    <div className="z-10 w-full flex justify-center fixed 0 text-2xl pt-4">
       <div className="flex bg-white  rounded-xl px-10 shadow-2xl">
         <div
           className={`mr-1 ${getBackgroundClass(

@@ -216,16 +216,19 @@ function ProjectCarousel({}: ProjectCarouselProps) {
         ))}
       </div>
 
-      <div className="absolute bottom-0 py-4 flex justify-center gap-5 w-full">
+      <div className="absolute bottom-0 flex justify-center gap-5 w-full h-xl:pb-4 ">
+        <div className="flex  gap-5 py-6 px-8 bg-white rounded-xl shadow-2xl">
         {slides.map((_, i) => (
           <div
             key={"circle" + i}
             className={`rounded-full w-5 h-5 ${
-              i === current ? "bg-white" : "bg-gray-500"
+              i === current ? "bg-slate-800" : "border-2 border-slate-700 w-4 h-4"
             } cursor-pointer`}
             onClick={() => setCurrent(i)}
           ></div>
         ))}
+        </div>
+       
       </div>
     </div>
   );
