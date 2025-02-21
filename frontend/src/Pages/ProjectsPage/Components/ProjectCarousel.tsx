@@ -213,7 +213,7 @@ function ProjectCarousel() {
       </div>
 
       <div className="absolute bottom-0 flex justify-center gap-5 w-full h-xl:pb-4 ">
-        <div className="flex  gap-5 py-6 px-8 bg-white rounded-xl shadow-2xl">
+        <div className="flex  gap-5 py-6 px-8 bg-white rounded-full shadow-2xl">
           {slides.map((_, i) => (
             <div
               key={"circle" + i}
