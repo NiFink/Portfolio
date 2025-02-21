@@ -1,40 +1,25 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import Menubar from "./GlobalComponents/Menubar";
 import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage";
 import AboutMePage from "./Pages/AboutMePage/AboutMePage";
 
 function App() {
-  const [currentPage, setPage] = useState("LandingPage");
-
-  const renderMenubar = () => {
-    if (currentPage !== "LandingPage") {
-      return (
-        <Menubar
-          landingPageClick={() => setPage("LandingPage")}
-          projectsPageClick={() => setPage("ProjectsPage")}
-          aboutmePageClick={() => setPage("AboutMePage")}
-          currentPage={currentPage}
-        />
-      );
-    }
-    return null;
-  };
-
   return (
-    <div className="bg-gradient-to-br from-rose-50 via-slate-400 to-indigo-2000">
-      {renderMenubar()}
-      {currentPage === "LandingPage" && (
-        <LandingPage ProjectsPageClick={() => setPage("ProjectsPage")} AboutMePageClick={() => setPage("AboutMePage")}/>
-      )}
-      {currentPage === "ProjectsPage" && (
-        <ProjectsPage LandingPageClick={() => setPage("LandingPage")} />
-      )}
-      {currentPage === "AboutMePage" && (
-        <AboutMePage  />
-      )}
-    </div>
+    <Router>
+      <div className="bg-gradient-to-br from-rose-50 via-slate-400 to-indigo-2000">
+        <Menubar />
+        <Routes>
+          {/* Verwende `element` statt `component` */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/aboutme" element={<AboutMePage />} />
+          <Route path="/contact" element={<LandingPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+

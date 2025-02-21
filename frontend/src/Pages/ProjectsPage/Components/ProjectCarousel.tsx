@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-interface ProjectCarouselProps {}
-
-function ProjectCarousel({}: ProjectCarouselProps) {
+function ProjectCarousel() {
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
@@ -74,8 +72,6 @@ function ProjectCarousel({}: ProjectCarouselProps) {
       git: "https://github.com/NiFink/A-little-Adventure",
     },
   ];
-  
-  
 
   const previousSlide = () => {
     setCurrent(current === 0 ? slides.length - 1 : current - 1);
@@ -218,17 +214,18 @@ function ProjectCarousel({}: ProjectCarouselProps) {
 
       <div className="absolute bottom-0 flex justify-center gap-5 w-full h-xl:pb-4 ">
         <div className="flex  gap-5 py-6 px-8 bg-white rounded-xl shadow-2xl">
-        {slides.map((_, i) => (
-          <div
-            key={"circle" + i}
-            className={`rounded-full w-5 h-5 ${
-              i === current ? "bg-slate-800" : "border-2 border-slate-700 w-4 h-4"
-            } cursor-pointer`}
-            onClick={() => setCurrent(i)}
-          ></div>
-        ))}
+          {slides.map((_, i) => (
+            <div
+              key={"circle" + i}
+              className={`rounded-full w-5 h-5 ${
+                i === current
+                  ? "bg-slate-800"
+                  : "border-2 border-slate-700 w-4 h-4"
+              } cursor-pointer`}
+              onClick={() => setCurrent(i)}
+            ></div>
+          ))}
         </div>
-       
       </div>
     </div>
   );

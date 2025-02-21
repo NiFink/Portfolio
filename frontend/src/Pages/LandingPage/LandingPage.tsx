@@ -1,16 +1,8 @@
-import React from "react";
 import LandingCarousel from "./Components/LandingCarousel";
 import Contact from "./Components/Contact";
 import LandingText from "./Components/LandingText";
 
-interface LandingPageProps {
-  ProjectsPageClick: () => void;
-  AboutMePageClick: () => void;
-}
-
-
-
-function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
+function LandingPage() {
 
   return (
     <div className="px-8 py-8 md:px-16 md:py-16 h-screen">
@@ -31,7 +23,7 @@ function LandingPage({ProjectsPageClick,AboutMePageClick}: LandingPageProps) {
 
         {/* Carousel: spans 1 column and 1 row */}
         <div className="col-span-1 row-span-3 rounded-lg overflow-hidden">
-          <LandingCarousel ProjectsPageClick={ProjectsPageClick} AboutMePageClick={AboutMePageClick}/>
+          <LandingCarousel/>
         </div>
 
         {/* Profile Image: spans 1 column and 1 row */}

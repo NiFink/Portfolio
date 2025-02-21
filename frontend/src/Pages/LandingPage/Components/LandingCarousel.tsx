@@ -1,17 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface LandingPageProps {
-  ProjectsPageClick: () => void;
-  AboutMePageClick: () => void;
-}
-
-function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProps) {
+function LandingCarousel() {
+  const navigate = useNavigate(); // Hook für Navigation
   const [current, setCurrent] = useState<number>(0);
 
   const slides = [
-    { click: ProjectsPageClick, data: "./Pictures/Projects.gif" },
-    { click: AboutMePageClick, data: "./Pictures/Aboutme.gif" },
-
+    { path: "/projects", data: "./Pictures/Projects.gif" },
+    { path: "/aboutme", data: "./Pictures/Aboutme.gif" },
   ];
 
   const previousSlide = () => {
@@ -20,6 +16,10 @@ function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProp
 
   const nextSlide = () => {
     setCurrent(current === slides.length - 1 ? 0 : current + 1);
+  };
+
+  const handleClick = (path: string) => {
+    navigate(path); // Mit react-router navigieren
   };
 
   return (
@@ -32,7 +32,7 @@ function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProp
           <div
             key={index}
             className="flex-shrink-0 w-full h-full cursor-pointer"
-            onClick={s.click}
+            onClick={() => handleClick(s.path)} // Navigieren bei Klick
           >
             <img
               src={s.data}
@@ -49,7 +49,7 @@ function LandingCarousel({ ProjectsPageClick, AboutMePageClick}: LandingPageProp
         >
           <i className="bi bi-caret-left-fill text-white text-3xl"></i>
         </button>
-        <div className="w-[60%] h-full" onClick={slides[current].click}></div>
+        <div className="w-[60%] h-full" onClick={() => handleClick(slides[current].path)}></div>
         <button
           onClick={nextSlide}
           className="h-full w-[20%] bg-gradient-to-r from-transparent to-black/20 cursor-pointer"

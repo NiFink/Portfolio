@@ -1,5 +1,3 @@
-import React from 'react';
-
 function LandingText() {
   return (
     <div className="h-full  p-10 bg-gradient-to-t from-white to-orange-300 bg-clip-text text-transparent overflow-hidden hover:overflow-scroll " >
