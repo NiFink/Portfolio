@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Menubar() {
 
   return (
-    <div className="z-10 w-full flex justify-center fixed top-0 left-0 text-2xl pt-4">
+    <div className="z-50 w-full flex justify-center fixed top-0 left-0 text-2xl pt-4">
       <div className="flex bg-white rounded-full px-6 shadow-2xl gap-8 py-4">
         <Link
           to="/"
