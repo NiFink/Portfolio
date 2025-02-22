@@ -7,7 +7,7 @@ import AboutMePage from "./Pages/AboutMePage/AboutMePage";
 function App() {
   return (
     <Router>
-      <div className="bg-gradient-to-b from-rose-50 via-slate-2 00 to-white">
+      <div className="bg-gradient-to-br from-rose-50 via-slate-200 to-indigo-200">
         <Menubar />
         <Routes>
           {/* Verwende `element` statt `component` */}
