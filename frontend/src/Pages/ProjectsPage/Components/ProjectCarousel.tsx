@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 function ProjectCarousel() {
   const [current, setCurrent] = useState<number>(0);
@@ -112,7 +113,7 @@ function ProjectCarousel() {
                 className={`px-12 flex flex-col justify-between h-full overflow-y-auto text-${s.text_color} text-xl`}
               >
                 {/* Details-Text oben */}
-                <div className="flex h-full items-center px-10  text-center text-xl font-medium h-xl:text-2xl overflow-scroll text-ellipsis">
+                <div className="flex h-full text-center px-10 text-xl font-medium h-xl:text-2xl overflow-scroll ">
                   {s.text}
                 </div>
 
@@ -126,12 +127,18 @@ function ProjectCarousel() {
                     <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-5 h-xl:p-10">
                       {s.languages.split(", ").map((lang, index) => (
-                        <img
-                          key={index}
-                          src={`./icons/${lang.toLowerCase()}.png`}
-                          alt={lang}
-                          className="h-10 w-10 h-xl:h-12 h-xl:w-12"
-                        />
+                        <div
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={lang}
+                        >
+                          <img
+                            key={index}
+                            src={`./icons/${lang.toLowerCase()}.png`}
+                            alt={lang}
+                            className="h-10 w-10 h-xl:h-12 h-xl:w-12"
+                          />
+                          <Tooltip id="my-tooltip" />
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -144,12 +151,18 @@ function ProjectCarousel() {
                     <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-5 h-xl:p-10">
                       {s.framework.split(", ").map((fw, index) => (
-                        <img
-                          key={index}
-                          src={`./icons/${fw.toLowerCase()}.png`}
-                          alt={fw}
-                          className="h-10 w-10 h-xl:h-12 h-xl:w-12"
-                        />
+                        <div
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={fw}
+                        >
+                          <img
+                            key={index}
+                            src={`./icons/${fw.toLowerCase()}.png`}
+                            alt={fw}
+                            className="h-10 w-10 h-xl:h-12 h-xl:w-12"
+                          />
+                          <Tooltip id="my-tooltip" />
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -162,12 +175,18 @@ function ProjectCarousel() {
                     <hr className="border-slate-800 w-[80%]" />
                     <div className="flex flex-wrap justify-center gap-2 mt-2 p-5 h-xl:p-10">
                       {s.tools.split(", ").map((tool, index) => (
-                        <img
-                          key={index}
-                          src={`./icons/${tool.toLowerCase()}.png`}
-                          alt={tool}
-                          className="h-10 w-10 h-xl:h-12 h-xl:w-12"
-                        />
+                        <div
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={tool}
+                        >
+                          <img
+                            key={index}
+                            src={`./icons/${tool.toLowerCase()}.png`}
+                            alt={tool}
+                            className="h-10 w-10 h-xl:h-12 h-xl:w-12"
+                          />
+                          <Tooltip id="my-tooltip" />
+                        </div>
                       ))}
                     </div>
                   </div>
