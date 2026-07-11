@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Entrance animations (framer-motion x/y offsets) and floating hero badges
+   must never widen the page on small screens */
+body {
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  @media (min-height: 800px) {
+    .h-xl {
+      height: 80vh;
+    }
+  }
+}
